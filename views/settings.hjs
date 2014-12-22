@@ -9,10 +9,6 @@
     <!-- Bootstrap -->
     <link href="/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
-    <link href="/stylesheets/bootstrap-switch.css" rel="stylesheet">
-
-    <link href="/stylesheets/colpick.css" rel="stylesheet" type="text/css" media="all">
-
     <!-- Custom styles for this template -->
     <link href="/stylesheets/stylesheet.css" rel="stylesheet">
 
@@ -40,24 +36,61 @@
         </div>
         <div id="navbar" class="collapse navbar-collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/">Home</a></li>
-            <li><a href="/settings">Settings</a></li>
+            <li><a href="/">Home</a></li>
+            <li class="active"><a href="/settings">Settings</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
     </nav>
 
     <div class="container content">
-      <h1 style="float:left;">
-        COLORPICKER FOR RGB LED STRIP 
-        <small>select your favourite color!</small>
-      </h1>
-      <div class="power pull-right">
-        <p>Power:</p>
-        <input type="checkbox" name="ledstripswitch">
+      <h1>ARDUINOS</h1>
+      <div class="row">
+          <table class="table table-condensed table-hover">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Room</th>
+                <th>IP</th>
+                <th>Port</th>
+                <th>Sensors</th>
+                <th>Functions</th>
+                <th></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>My Room</td>
+                <td>192.168.10.6</td>
+                <td>80</td>
+                <td></td>
+                <td>controlling RGB LED Strips</td>
+                <td>
+                  <div class="pull-right">
+                  <button type="button" class="btn btn-primary btn-xs">edit</button>
+                  <button type="button" class="btn btn-danger btn-xs">delete</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
       </div>
-      <div id="colpick"></div>
       
+      <h4 style="margin-top:120px;">ADD A NEW ARDUINO</h4>
+      <div class="row">
+        <table class="table table-condensed">
+          <tr>
+            <td><input class="form-control input-sm" type="text" placeholder="#"></td>
+            <td><input class="form-control input-sm" type="text" placeholder="Room"></td>
+            <td><input class="form-control input-sm" type="text" placeholder="IP"></td>
+            <td><input class="form-control input-sm" type="text" placeholder="port"></td>
+            <td><input class="form-control input-sm" type="text" placeholder="Sensors"></td>
+            <td><input class="form-control input-sm" type="text" placeholder="Funktions"></td>
+            <td><button type="button" class="btn btn-default btn-sm">save</button></td>
+          </tr>
+        </table>
+      </div>
     </div>
 
     <!-- Bootstrap core JavaScript
@@ -68,34 +101,5 @@
     <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
     <script src="/bootstrap/js//ie10-viewport-bug-workaround.js"></script>
 
-    <script src="/javascripts/bootstrap-switch.js"></script>
-
-    <!-- COLOR PICKER -->
-    <script src="//ajax.googleapis.com/ajax/libs/jqueryui/1.10.3/jquery-ui.min.js"></script>
-    <script src="/javascripts/colpick.js"></script>
-    <script type="text/javascript">
-      $('#colpick').colpick({
-        flat:true,
-        submit:1,
-        submitText:'OK',
-        width:'1140px',
-        fontSize: '20px',
-        colorScheme: 'dark',
-        /*onChange:function(hsb, hex, rgb){
-        },*/
-        onSubmit:function(hsb,hex,rgb) {
-          //console.log('hex: ' + hex);
-          //console.log('rgb: ' + rgb.r+','+rgb.g+','+rgb.b);
-          //$('input[name="ledstripswitch"]').bootstrapSwitch('toggleState'); // Test toggle switch
-        }
-      });
-    </script>
-
-    <script type="text/javascript">
-      $('input[name="ledstripswitch"]').bootstrapSwitch().on('switchChange.bootstrapSwitch', function(event, state) {
-        //console.log('ledstrip: ' + state); // true | false
-        //$('#colpick').colpickSetColor('00ff00'); // Test color picker
-      });
-    </script>
   </body>
 </html>
